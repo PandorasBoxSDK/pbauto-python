@@ -2,7 +2,7 @@ import socket
 import struct
 
 # Pandoras Box Automation
-# pbauto-python v0.1.12086 @2016-02-22 <support@coolux.de>
+# pbauto-python v0.2.12086 @2016-02-23 <support@coolux.de>
 
 
 class ParamKind:
