@@ -2,7 +2,7 @@ import socket
 import struct
 
 # Pandoras Box Automation
-# pbauto-python v0.3.12086 @2016-03-03 <support@coolux.de>
+# pbauto-python v0.4.12086 @2016-03-03 <support@coolux.de>
 
 
 class ParamKind:
@@ -3595,7 +3595,7 @@ class OfflineTcp(Connector):
         elif self.data_format == 'wd':
             return ''.join('[h{:02x}]'.format(x) for x in data)
         elif self.data_format == 'pb':
-            return ' '.join('[h{:02x}]'.format(x) for x in data)
+            return ' '.join('{:02x}'.format(x) for x in data)
         else:
             raise Exception("Not a format: '%s'" % self.data_format)
 
