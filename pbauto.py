@@ -2,7 +2,7 @@ import socket
 import struct
 
 # Pandoras Box Automation
-# pbauto-python v0.5.12086 @2016-04-15 <support@coolux.de>
+# pbauto-python v0.6.12086 @2016-06-18 <support@coolux.de>
 
 
 class ParamKind:
@@ -3704,15 +3704,15 @@ class ByteUtil:
         return struct.unpack("d", self._read_block(8))[0]
 
     def read_string_narrow(self):
-        length = self.readShort()
+        length = self.read_short()
         return self._read_block(length).decode("ASCII")
 
     def read_string_wide(self):
-        length = self.readShort()
+        length = self.read_short()
         return self._read_block(length * 2).decode("UTF-16-BE")
 
     def read_byte_buffer(self):
-        length = self.readInt()
+        length = self.read_int()
         return self._read_block(length)
 
     def _read_block(self, count):
