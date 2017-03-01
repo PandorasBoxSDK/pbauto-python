@@ -19,10 +19,10 @@ ip = "127.0.0.1"
 domain = 0
 
 connector = Tcp(ip, domain) # domain is optional
-pb = pbauto.PBAuto(connector)
+pb = pbauto.PbAuto(connector)
 
 # ... or use the convenience function
-pb = pbauto.PBAuto.connect_tcp(ip, domain)
+pb = pbauto.PbAuto.connect_tcp(ip, domain)
 ```
 
 You can then proceed to use all api functions.
