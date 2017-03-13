@@ -9,7 +9,7 @@ This project is part of the Pandoras Box SDK. It implements an interface to acce
 The code is currently distributed as a single file. There might be a pip package in the future.
 
 ## Usage
-The PBAuto class expects a connector in the constructor. Currently there is only the TCP connector.
+The PbAuto class expects a connector in the constructor. Currently there is only the TCP connector.
 
 ```python
 import pbauto
@@ -43,7 +43,7 @@ The python file also allows you to generate the messages required to control Pan
 It is important to know that the message changes if the PB Domain changes. As long as you keep the Domain, you can use the same message code.
 
 ```
-pb = PBAuto.offline_tcp(data_format='pb')
+pb = PbAuto.offline_tcp(data_format='pb')
 pb.reset_all()
 
 # prints "[h50] [h42] [h41] [h55] [h01] [h00] [h00] [h00] [h00] [h00] [h02] [h00] [h00] [h00] [h00] [h00] [h03] [h00] [h09]"
@@ -57,4 +57,4 @@ If the major version changes, then these changes are incompatible with prior ver
 Most of the files in this repository are generated. Please contribute to the template files instead.
 https://github.com/PandorasBoxSDK/pbauto-generator
 
-v1.2.13077, generated on 2016-11-06
+v1.3.13077, generated on 2017-03-13

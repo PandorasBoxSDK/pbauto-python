@@ -5,7 +5,7 @@ import struct
 import base64
 
 # Pandoras Box Automation
-# pbauto-python v1.2.13077 @2016-11-06 <support@coolux.de>
+# pbauto-python v1.3.13077 @2017-03-13 <support@coolux.de>
 
 
 class ErrorCode:
@@ -3654,9 +3654,9 @@ class PbAuto:
         return PbAuto.Result(ok=True, code=0)
 
 
+
 class Connector(object):
     pass
-
 
 class OfflineHttp(Connector):
     MSG_TEMPLATE = ("PBAUTO / HTTP/1.0\r\nHost: %s\r\nUser-Agent: OfflineHttpGen.PBAuto/1.0\r\n"
@@ -3670,7 +3670,6 @@ class OfflineHttp(Connector):
         b64data = base64.b64encode(bytes(data))
         self.callback(self.MSG_TEMPLATE % (self.ip, len(b64data), b64data.decode("UTF-8")))
         return None
-
 
 class OfflineTcp(Connector):
     FormatConfig = namedtuple('FormatConfig', 'template pre join post')
@@ -3752,6 +3751,9 @@ class ByteUtil:
         self.__pos = 0
 
     def write_bool(self, val):
+        self.__data.extend(struct.pack('!B', 1 if val else 0))
+
+    def write_byte(self, val):
         self.__data.extend(struct.pack('!B', val))
 
     def write_short(self, val):
